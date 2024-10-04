@@ -24,13 +24,12 @@ if response.status_code == 200:
 
     # get current temp, low, high, conditions
     currentTemp = soup.find("span", class_="wu-value wu-value-to").text
-    highTemp = soup.find("span", class_="hi-temp-text").text
-    lowTemp = soup.find("span", class_="low-temp-text").text
+    highTemp = soup.find("span", class_="hi").text
+    lowTemp = soup.find("span", class_="lo").text
     weatherCons = soup.find("div", class_="condition-icon").text
 
     # print weather data
-    print(f"current temperature in {city.title()}, {state.upper()}: {currentTemp} F")
+    print(f"current temperature in {city.title()}, {state.title()}: {currentTemp} F")
     print(f"high temp: {highTemp} F")
     print(f"low temp: {lowTemp} F")
-    print(f"high temp: {highTemp} F")
-    print(f"weather conditions: {weatherCons}F")
+    print(f"weather conditions: {weatherCons}")
